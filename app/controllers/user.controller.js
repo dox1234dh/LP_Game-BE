@@ -68,7 +68,8 @@ exports.createPlayLogBroad = async (req, res) => {
         },
         { transaction: t }
       );
-    } else {
+    } 
+    else if (!isExistUser) {
       await ProcessUser.create(
         {
           idUser: req.userId,
